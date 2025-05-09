@@ -1,0 +1,85 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    padding: 40px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: var(--box-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.timer {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: var(--timer-bg);
+    /* font-size: 150%; */
+}
+
+.timer input {
+    margin: 5px;
+    padding: 8px;
+}
+
+.time-left {
+    /* font-size: 1.4em; */
+    font-size: 2.5em;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+button {
+    padding: 6px 12px;
+    margin-top: 10px;
+}
+
+.theme-selector {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+}
+
+/* 主題變數區 */
+:root {
+    --box-bg: white;
+    --timer-bg: #fafafa;
+}
+
+/* 白色主題（預設） */
+body.white {
+    background: #f0f0f0;
+    color: #000;
+    --box-bg: white;
+    --timer-bg: #fafafa;
+}
+
+/* 黑色主題 */
+body.black {
+    background: #222;
+    color: #eee;
+    --box-bg: #333;
+    --timer-bg: #444;
+}
+
+/* 粉紅主題 */
+body.pink {
+    background: #ffe6f0;
+    color: #880044;
+    --box-bg: #fff0f5;
+    --timer-bg: #ffd6e8;
+}
+
+/* 水藍主題 */
+body.blue {
+    background: #e6f7ff;
+    color: #004466;
+    --box-bg: #f0fbff;
+    --timer-bg: #ccf0ff;
+}
