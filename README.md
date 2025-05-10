@@ -22,6 +22,6 @@ https://adam-liao.github.io/countdown-timer/
 # 📲 補充
 
 - 手機或 iPad 一樣會保留 localStorage（資料儲存在那台裝置）
-- 從line或FB進入，會當成不同的計數器，可以將網址複製再貼到瀏覽器上，就是新的計數器了。
+- 從line或FB進入，會當成不同的計數器，可以將網址複製再貼到瀏覽器上，這樣就是新的計數器了。
 
 

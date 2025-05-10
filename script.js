@@ -49,7 +49,7 @@ function showCountdown(container, name, time, nameKey, timeKey) {
     const diff = targetDate - now;
 
     if (diff <= 0) {
-      document.getElementById(`left-${nameKey}`).innerText = `恭喜達成：${name}`;
+      document.getElementById(`left-${nameKey}`).innerText = `🎉恭喜達成：${name}`;
       clearInterval(interval);
       return;
     }

@@ -32,6 +32,7 @@ body {
     font-size: 1.4em;
     /* counter 字型的大小設定 */
     /* font-size: 2.5em; */
+    /* 如果有機會要來改字型 */
     margin-top: 10px;
     font-weight: bold;
 }
@@ -48,6 +49,7 @@ button {
 }
 
 /* 主題變數區 */
+ /* :root 裡，是 CSS 自訂變數的全域定義區域 */
 :root {
     --box-bg: white;
     --timer-bg: #fafafa;
