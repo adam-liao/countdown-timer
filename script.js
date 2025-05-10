@@ -66,25 +66,45 @@ function showCountdown(container, name, time, nameKey, timeKey) {
     //   `${pad(years)} 年 ${pad(months)} 月 ${pad(leftDays)} 天 ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
     let result = "";
 
-// 只有在年 > 0 時顯示年
-if (years > 0) result += `${pad(years)} 年 `;
+    // 顯示年（>0）
+    if (years > 0) {
+      result += `${pad(years)} 年 `;
+    }
 
-// 月 > 0 或 年 > 0 才顯示月
-if (months > 0 || years > 0) result += `${pad(months)} 月 `;
+    // 顯示月（年有值 or 月>0）
+    if (months > 0 || years > 0) {
+      result += `${pad(months)} 月 `;
+    }
 
-// 日 > 0 或 上面有年月，才顯示日
-if (leftDays > 0 || months > 0 || years > 0) result += `${pad(leftDays)} 天 `;
+    // 顯示天（年月有值 or 天>0）
+    if (leftDays > 0 || months > 0 || years > 0) {
+      result += `${pad(leftDays)} 天 `;
+    }
 
-// 時 > 0 或有更高單位時才顯示
-if (hours > 0 || leftDays > 0 || months > 0 || years > 0) result += `${pad(hours)} 小時 `;
+    // 顯示時（只要有更高單位或時 > 0）
+    if (hours > 0 || leftDays > 0 || months > 0 || years > 0) {
+      result += `${pad(hours)} 小時 `;
+    }
 
-// 分 > 0 或有更高單位時才顯示
-if (minutes > 0 || hours > 0 || leftDays > 0 || months > 0 || years > 0) result += `${pad(minutes)} 分 `;
+    // 顯示分（只要有更高單位或分 > 0）
+    if (minutes > 0 || hours > 0 || leftDays > 0 || months > 0 || years > 0) {
+      result += `${pad(minutes)} 分 `;
+    }
 
-// 秒永遠顯示
-result += `${pad(seconds)} 秒`;
+    // 秒數永遠顯示
+    result += `${pad(seconds)} 秒`;
 
-document.getElementById(`left-${nameKey}`).innerText = result;F
+    // 正確寫回畫面
+    const targetEl = document.getElementById(`left-${nameKey}`);
+    if (targetEl) {
+      targetEl.innerText = result;
+    }
+
+
+
+
+
+
   }
 
   function pad(n) {
