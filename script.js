@@ -64,13 +64,6 @@ function showCountdown(container, name, time, nameKey, timeKey) {
 
     document.getElementById(`left-${nameKey}`).innerText =
       `${pad(years)} 年 ${pad(months)} 月 ${pad(leftDays)} 天 ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-    
-
-
-
-
-
-    
   }
 
   function pad(n) {
