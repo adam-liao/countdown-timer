@@ -62,8 +62,29 @@ function showCountdown(container, name, time, nameKey, timeKey) {
     const months = Math.floor((days % 365) / 30);
     const leftDays = (days % 365) % 30;
 
-    document.getElementById(`left-${nameKey}`).innerText =
-      `${pad(years)} 年 ${pad(months)} 月 ${pad(leftDays)} 天 ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    // document.getElementById(`left-${nameKey}`).innerText =
+    //   `${pad(years)} 年 ${pad(months)} 月 ${pad(leftDays)} 天 ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    let result = "";
+
+// 只有在年 > 0 時顯示年
+if (years > 0) result += `${pad(years)} 年 `;
+
+// 月 > 0 或 年 > 0 才顯示月
+if (months > 0 || years > 0) result += `${pad(months)} 月 `;
+
+// 日 > 0 或 上面有年月，才顯示日
+if (leftDays > 0 || months > 0 || years > 0) result += `${pad(leftDays)} 天 `;
+
+// 時 > 0 或有更高單位時才顯示
+if (hours > 0 || leftDays > 0 || months > 0 || years > 0) result += `${pad(hours)} 小時 `;
+
+// 分 > 0 或有更高單位時才顯示
+if (minutes > 0 || hours > 0 || leftDays > 0 || months > 0 || years > 0) result += `${pad(minutes)} 分 `;
+
+// 秒永遠顯示
+result += `${pad(seconds)} 秒`;
+
+document.getElementById(`left-${nameKey}`).innerText = result;F
   }
 
   function pad(n) {

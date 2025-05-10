@@ -30,6 +30,7 @@ body {
 
 .time-left {
     /* font-size: 1.4em; */
+    /* counter 字型的大小設定 */
     font-size: 2.5em;
     margin-top: 10px;
     font-weight: bold;
