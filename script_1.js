@@ -62,19 +62,8 @@ function showCountdown(container, name, time, nameKey, timeKey) {
     const months = Math.floor((days % 365) / 30);
     const leftDays = (days % 365) % 30;
 
-    // 條件顯示有意義的時間單位
-    let result = "";
-    if (years > 0) result += `${pad(years)} 年 `;
-    if (months > 0 || years > 0) result += `${pad(months)} 月 `;
-    if (leftDays > 0 || months > 0 || years > 0) result += `${pad(leftDays)} 天 `;
-    if (hours > 0 || leftDays > 0 || months > 0 || years > 0) result += `${pad(hours)} 小時 `;
-    if (minutes > 0 || hours > 0 || leftDays > 0 || months > 0 || years > 0) result += `${pad(minutes)} 分 `;
-    result += `${pad(seconds)} 秒`;
-
-    const targetEl = document.getElementById(`left-${nameKey}`);
-    if (targetEl) {
-      targetEl.innerText = result;
-    }
+    document.getElementById(`left-${nameKey}`).innerText =
+      `${pad(years)} 年 ${pad(months)} 月 ${pad(leftDays)} 天 ${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
   }
 
   function pad(n) {
@@ -91,6 +80,7 @@ function resetTimer(nameKey, timeKey) {
   location.reload();
 }
 
+// 主題切換
 function changeTheme() {
   const theme = document.getElementById("themeSelect").value;
   document.body.className = theme;
