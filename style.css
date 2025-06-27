@@ -1,3 +1,4 @@
+/* 2025/06/27-16:45 */
 body {
     font-family: sans-serif;
     text-align: center;
@@ -15,24 +16,27 @@ body {
 }
 
 .timer {
-    margin: 20px 0;
+    margin: 20px 0 30px;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     background: var(--timer-bg);
-    /* font-size: 150%; */
+}
+
+.timer label {
+    display: block;
+    margin-top: 8px;
 }
 
 .timer input {
     margin: 5px;
     padding: 8px;
+    width: 80%;
+    max-width: 300px;
 }
 
 .time-left {
     font-size: 1.4em;
-    /* counter 字型的大小設定 */
-    /* font-size: 2.5em; */
-    /* 如果有機會要來改字型 */
     margin-top: 10px;
     font-weight: bold;
 }
@@ -48,14 +52,11 @@ button {
     right: 20px;
 }
 
-/* 主題變數區 */
- /* :root 裡，是 CSS 自訂變數的全域定義區域 */
 :root {
     --box-bg: white;
     --timer-bg: #fafafa;
 }
 
-/* 白色主題（預設） */
 body.white {
     background: #f0f0f0;
     color: #000;
@@ -63,7 +64,6 @@ body.white {
     --timer-bg: #fafafa;
 }
 
-/* 黑色主題 */
 body.black {
     background: #222;
     color: #eee;
@@ -71,7 +71,6 @@ body.black {
     --timer-bg: #444;
 }
 
-/* 粉紅主題 */
 body.pink {
     background: #ffe6f0;
     color: #880044;
@@ -79,10 +78,45 @@ body.pink {
     --timer-bg: #ffd6e8;
 }
 
-/* 水藍主題 */
 body.blue {
     background: #e6f7ff;
     color: #004466;
     --box-bg: #f0fbff;
     --timer-bg: #ccf0ff;
+}
+
+/* RWD 設定 */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .timer {
+    font-size: 1em;
+    padding: 15px;
+  }
+
+  .timer input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .theme-selector {
+    position: static;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .timer {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
 }
