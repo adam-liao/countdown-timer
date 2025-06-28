@@ -1,4 +1,4 @@
-/* 2025/06/27-16:45 */
+/* 2025/06/27-17:05 */
 body {
     font-family: sans-serif;
     text-align: center;
@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 700px;
+    max-width: 1200px;
     margin: auto;
     background: var(--box-bg);
     padding: 20px;
@@ -15,14 +15,28 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.timer {
-    margin: 20px 0 30px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background: var(--timer-bg);
+/* 計時器容器：橫向排列，RWD */
+#timers {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
+/* 單一計時器樣式 */
+.timer {
+    flex: 1;
+    min-width: 220px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: var(--timer-bg);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 表單樣式與間距 */
 .timer label {
     display: block;
     margin-top: 8px;
@@ -52,11 +66,13 @@ button {
     right: 20px;
 }
 
+/* 主題變數 */
 :root {
     --box-bg: white;
     --timer-bg: #fafafa;
 }
 
+/* 白色主題（預設） */
 body.white {
     background: #f0f0f0;
     color: #000;
@@ -64,6 +80,7 @@ body.white {
     --timer-bg: #fafafa;
 }
 
+/* 黑色主題 */
 body.black {
     background: #222;
     color: #eee;
@@ -71,6 +88,7 @@ body.black {
     --timer-bg: #444;
 }
 
+/* 粉紅主題 */
 body.pink {
     background: #ffe6f0;
     color: #880044;
@@ -78,6 +96,7 @@ body.pink {
     --timer-bg: #ffd6e8;
 }
 
+/* 水藍主題 */
 body.blue {
     background: #e6f7ff;
     color: #004466;
@@ -85,15 +104,19 @@ body.blue {
     --timer-bg: #ccf0ff;
 }
 
-/* RWD 設定 */
+/* RWD - 平板以下：直式排列 */
 @media screen and (max-width: 768px) {
   .container {
     padding: 15px;
   }
 
+  #timers {
+    flex-direction: column;
+    gap: 15px;
+  }
+
   .timer {
-    font-size: 1em;
-    padding: 15px;
+    width: 100%;
   }
 
   .timer input {
@@ -111,6 +134,7 @@ body.blue {
   }
 }
 
+/* RWD - 手機小螢幕 */
 @media screen and (max-width: 480px) {
   .timer {
     padding: 10px;
